@@ -1,0 +1,24 @@
+{
+  "name": {
+    "en": "United Kingdom"
+  },
+  "description": {
+    "en": "Implements fields and codes that are specific to the United Kingdom."
+  },
+  "documentationUrl": {
+    "en": "https://github.com/cabinetoffice/ocds_uk_extension"
+  },
+  "schemas": [
+    "release-schema.json"
+  ],
+  "codelists": [
+    "+documentType.csv",
+    "+itemClassificationScheme.csv",
+    "+milestoneType.csv",
+    "+partyRole.csv",
+    "+statistic.csv"
+  ],
+  "compatibility": [
+    "1.1"
+  ]
+}
