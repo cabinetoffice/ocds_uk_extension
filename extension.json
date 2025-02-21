@@ -12,11 +12,11 @@
     "release-schema.json"
   ],
   "codelists": [
+    "+bidStatistics.csv",
     "+documentType.csv",
     "+itemClassificationScheme.csv",
     "+milestoneType.csv",
-    "+partyRole.csv",
-    "+statistic.csv"
+    "+partyRole.csv"
   ],
   "compatibility": [
     "1.1"
