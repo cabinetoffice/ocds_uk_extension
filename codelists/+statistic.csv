@@ -1,0 +1,4 @@
+Category,Code,Title,Description
+bids,finalStageBids,Final stage bids,The number of bids assessed in the final stage.
+bids,smeFinalStageBids,Final stage bids from SMEs,"The number of bids from small and medium enterprises assessed in the final stage. In the UK, an SME is defined has having fewer than 250 staff, and either turnover less than £44 million or balance sheet total less than £38 million."
+bids,vcseFinalStageBids,Final stage bids from VCSEs,"The number of bids from voluntary, community or social enterprises assessed in the final stage. In the UK, a VCSE is defined as a non-governmental organization that is value-driven and principally reinvests its surpluses to further social, environmental or cultural objectives."

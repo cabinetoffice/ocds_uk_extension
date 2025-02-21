@@ -1,0 +1,4 @@
+Code,Title,Description,Source,Category
+UK_CA_TYPE,UK type of contracting authority,"The types of contracting authority defined by the the UK's Procurement Act 2023. One of publicAuthorityCentralGovernment, publicAuthoritySubCentralGovernment, publicUndertaking, privateUtility, other.",,organization
+UK_CA_DEVOLVED_REGULATIONS,UK devolved regulations that apply to the contracting authority,"Different regulations apply to a contracting authority under the UK's Procurement Act 2023 if a contracting authority operates mainly in Scotland, Wales or Northern Ireland and its activities are not reserved. One of GB-NIR, GB-SCT, GB-WLS.",https://www.iso.org/obp/ui/#iso:code:3166:GB,organization
+UKPGA,UK Public General Act,Identifier scheme for UK legislation.,https://www.legislation.gov.uk/ukpga,legalBasis
