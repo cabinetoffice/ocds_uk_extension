@@ -291,7 +291,10 @@
 				"proposedAmendments": {
 					"title": "Proposed amendments",
 					"description": "Amendments that have been proposed but at this point have not been signed.",
-					"$ref": "#/definitions/Amendment"
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Amendment"
+					}
 				}
 			}
 		},
