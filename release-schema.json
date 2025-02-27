@@ -493,6 +493,7 @@
       "type": "object",
       "properties": {
         "description": {
+          "title": "Description",
           "description": "A description of the subcontract, including any subcontractor information only available as free text. In the UK, the associated people/organisations that the supplier will subcontract to or is relying on to satisfy the conditions of participation.",
           "type": [
             "string",
