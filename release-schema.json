@@ -140,7 +140,10 @@
         "specialRegime": {
           "title": "Special regime",
           "description": "The special regime that the tender is under.",
-          "type": "array",
+          "type": [
+            "array",
+            "null"
+          ],
           "items": {
             "type": "string"
           }
