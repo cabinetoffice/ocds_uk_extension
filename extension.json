@@ -20,5 +20,9 @@
   ],
   "compatibility": [
     "1.1"
+  ],
+  "dependencies": [
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/master/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_bid_extension/v1.1.5/extension.json"
   ]
 }
