@@ -70,7 +70,8 @@
                             ]
                           }
                         }
-                      }
+                      },
+                      "wholeListMerge": true
                     }
                   }
                 },
@@ -314,7 +315,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Classification"
-          }
+          },
+          "wholeListMerge": true
         },
         "period": {
           "title": "Period",
@@ -460,7 +462,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Classification"
-          }
+          },
+          "wholeListMerge": true
         },
         "buyerLocationRestrictions": {
           "title": "Buyer location restrictions",
@@ -468,7 +471,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Location"
-          }
+          },
+          "wholeListMerge": true
         }
       }
     },
