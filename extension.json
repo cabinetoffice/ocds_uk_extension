@@ -18,6 +18,10 @@
     "+milestoneType.csv",
     "+partyRole.csv"
   ],
+  "contactPoint": {
+    "name": "",
+    "email": ""
+  },
   "compatibility": [
     "1.1"
   ],
