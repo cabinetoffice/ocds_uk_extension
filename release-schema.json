@@ -1,514 +1,513 @@
 {
-	"definitions": {
-		"Organization": {
-			"properties": {
-				"roleDetails": {
-					"title": "Role details",
-					"description": "A summary of the organization’s role in this procurement.",
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"details": {
-					"properties": {
-						"vcse": {
-							"title": "VCSE status",
-							"description": "Whether an organization is a voluntary, community or social enterprise (VCSE). In the UK, a VCSE is defined as a non-governmental organization that is value-driven and principally reinvests its surpluses to further social, environmental or cultural objectives.",
-							"type": [
-								"boolean",
-								"null"
-							]
-						},
-						"publicServiceMissionOrganization": {
-							"title": "Public service mission organization status",
-							"description": "Whether an organization is a public service mission organization. In the UK, public service mission organizations are called public service mutuals, and are defined as delivering reservable light touch public services, not for profit or distributing profits to members only, and employee-managed.",
-							"type": [
-								"boolean",
-								"null"
-							]
-						},
-						"shelteredWorkshop": {
-							"title": "Sheltered workshop status",
-							"description": "Whether an organization is a sheltered workshop. In the UK, sheltered workshops are called supported employment providers, and are defined as providing employment or related support to disabled or disadvantaged individuals, who are at least 30% of employees.",
-							"type": [
-								"boolean",
-								"null"
-							]
-						},
-						"excludedSupplier": {
-							"title": "Excluded supplier information",
-							"description": "Information about an excluded supplier being awarded a contract.",
-							"type": "object",
-							"properties": {
-								"exclusionGrounds": {
-									"title": "Exclusion grounds",
-									"description": "The exclusion grounds that apply to the supplier or an associated person.",
-									"type": "object",
-									"properties": {
-										"criteria": {
-											"title": "Exclusion criteria",
-											"description": "The array of exclusion criteria.",
-											"type": "array",
-											"items": {
-												"type": "object",
-												"properties": {
-													"type": {
-														"title": "Type",
-														"description": "The type of exclusion.",
-														"type": [
-															"string",
-															"null"
-														]
-													},
-													"domesticLegalBasis": {
-														"title": "Domestic legal basis",
-														"description": "Whether the legal basis for the exclusion grounds is UK-based.",
-														"type": [
-															"boolean",
-															"null"
-														]
-													}
-												}
-											}
-										}
-									}
-								},
-								"awardRationale": {
-									"title": "Award rationale",
-									"description": "The rationale for awarding the contract to the excluded supplier.",
-									"type": [
-										"string",
-										"null"
-									]
-								},
-								"awardRationaleClassification": {
-									"title": "Award rationale classification",
-									"description": "The classification of the rationale for awarding the contract to the excluded supplier.",
-									"$ref": "#/definitions/Classification"
-								}
-							}
-						}
-					}
-				},
-				"control": {
-					"title": "Control",
-					"description": "Information on other organizations or people that have a controlling interest in the organization.",
-					"type": "object",
-					"properties": {
-						"description": {
-							"title": "Description",
-							"description": "Textual description of who has what control over the organization.",
-							"type": [
-								"string",
-								"null"
-							]
-						}
-					}
-				}
-			}
-		},
-		"Planning": {
-			"properties": {
-				"noEngagementNoticeRationale": {
-					"title": "No engagement notice rationale",
-					"description": "The rationale for not publishing an engagement notice before the tender notice, if engagement has been carried out.",
-					"type": [
-						"string",
-						"null"
-					]
-				}
-			}
-		},
-		"Tender": {
-			"properties": {
-				"finalStatusDate": {
-					"title": "Final status date",
-					"description": "The date on which the tender reached its final status.",
-					"type": [
-						"string",
-						"null"
-					],
-					"format": "date-time"
-				},
-				"procurementMethodRationaleLegalBasis": {
-					"title": "Procurement method rationale legal basis",
-					"description": "The legal basis of the rationale for the chosen procurement method. Specifically the UK statutory instrument that allows the direct award with the justification to protect life, health, public order or safety.",
-					"$ref": "#/definitions/Classification"
-				},
-				"specialRegime": {
-					"title": "Special regime",
-					"description": "The special regime that the tender is under.",
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				},
-				"aboveThreshold": {
-					"title": "Above threshold",
-					"description": "Whether the tender value is above the relevant threshold.",
-					"$ref": "#/definitions/AboveThreshold"
-				},
-				"lotDetails": {
-					"title": "Lot Details",
-					"description": "Details of any criteria that apply to bidding on the lots in this tender.",
-					"type": "object",
-					"properties": {
-						"maximumLotsBidPerSupplier": {
-							"title": "Maximum lots per supplier",
-							"description": "The maximum number of lots that one supplier can bid on as part of this contracting process.",
-							"type": [
-								"integer",
-								"null"
-							]
-						},
-						"maximumLotsAwardedPerSupplier": {
-							"title": "Maximum lots per supplier",
-							"description": "The maximum number of lots that can be awarded to one supplier as part of this contracting process.",
-							"type": [
-								"integer",
-								"null"
-							]
-						},
-						"awardCriteriaDetails": {
-							"title": "Award criteria details",
-							"description": "Any detailed or further information on the award or selection criteria.",
-							"type": [
-								"string",
-								"null"
-							]
-						},
-						"noLotsDivisionRationale": {
-							"title": "No lots division rationale",
-							"description": "The rationale for not dividing the tender into lots, if that would have been possible.",
-							"type": [
-								"string",
-								"null"
-							]
-						}
-					}
-				},
-				"expressionOfInterestDeadline": {
-					"title": "Expression of interest deadline",
-					"description": "The submission deadline for expressions of interest. This submission is also called a request to participate.",
-					"type": [
-						"string",
-						"null"
-					],
-					"format": "date-time"
-				},
-				"riskDetails": {
-					"title": "Risk details",
-					"description": "Description of risks that could jeopardise the satisfactory performance of the contract.",
-					"type": [
-						"string",
-						"null"
-					]
-				}
-			}
-		},
-		"Award": {
-			"properties": {
-				"standstillPeriod": {
-					"title": "Standstill period",
-					"description": "The period before the contract signature during which the award decision can be challenged. This period typically starts on the date on which the tenderers are informed about the award decision.",
-					"$ref": "#/definitions/Period"
-				},
-				"finalStatusDate": {
-					"title": "Final status date",
-					"description": "The date on which the award reached its final status.",
-					"type": [
-						"string",
-						"null"
-					],
-					"format": "date-time"
-				},
-				"assessmentSummariesDateSent": {
-					"title": "Assessment summaries date sent",
-					"description": "The date on which assessment summaries were sent to tenderers.",
-					"type": [
-						"string",
-						"null"
-					],
-					"format": "date-time"
-				},
-				"aboveThreshold": {
-					"title": "Above threshold",
-					"description": "Whether the award value is above the relevant threshold.",
-					"$ref": "#/definitions/AboveThreshold"
-				},
-				"mainProcurementCategory": {
-					"title": "Main procurement category",
-					"description": "The primary category describing the main object of this award, from the closed [procurementCategory](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/codelists/#procurement-category) codelist.",
-					"type": [
-						"string",
-						"null"
-					],
-					"codelist": "procurementCategory.csv",
-					"openCodelist": false,
-					"enum": [
-						"goods",
-						"services",
-						"works",
-						null
-					]
-				},
-				"additionalProcurementCategories": {
-					"title": "Additional procurement categories",
-					"description": "Any additional categories describing the objects of this award, using the open [extendedProcurementCategory](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/codelists/#extended-procurement-category) codelist.",
-					"type": [
-						"array",
-						"null"
-					],
-					"items": {
-						"type": "string"
-					},
-					"codelist": "extendedProcurementCategory.csv",
-					"openCodelist": true
-				}
-			}
+  "definitions": {
+    "Organization": {
+      "properties": {
+        "roleDetails": {
+          "title": "Role details",
+          "description": "A summary of the organization’s role in this procurement.",
+          "type": [
+            "string",
+            "null"
+          ]
         },
-		"Contract": {
-			"properties": {
-				"aboveThreshold": {
-					"title": "Above threshold",
-					"description": "Whether the contract value is above the relevant threshold.",
-					"$ref": "#/definitions/AboveThreshold"
-				},
-				"terminationRationaleClassification": {
-					"title": "Termination rationale classification",
-					"description": "The classification of the rationale for terminating the contract.",
-					"$ref": "#/definitions/Classification"
-				},
-				"noAgreedMetricsRationale": {
-					"title": "No agreed metrics rationale",
-					"description": "The rationale for not publishing agreed metrics, in the UK known as key performance indicators.",
-					"type": [
-						"string",
-						"null"
-					]
-				},
-				"proposedAmendments": {
-					"title": "Proposed amendments",
-					"description": "Amendments that have been proposed but at this point have not been signed.",
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Amendment"
-					}
-				}
-			}
-		},
-		"Amendment": {
-			"properties": {
-				"standstill": {
-					"title": "Standstill",
-					"description": "Whether the period between the publication of this notice and the estimated contract amendment date constitute a formal standstill period.",
-					"type": [
-						"boolean",
-						"null"
-					]
-				},
-				"rationaleClassifications": {
-					"title": "Rationale classifications",
-					"description": "The classifications of the rationale for amending the contract.",
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Classification"
-					}
-				},
-				"period": {
-					"title": "Period",
-					"description": "The period for which the amended contract will be in force.",
-					"$ref": "#/definitions/Period"
-				},
-				"hasRenewal": {
-					"title": "Has renewal",
-					"description": "Whether the buyer reserves the right to renew the contract.",
-					"type": [
-						"boolean",
-						"null"
-					]
-				},
-				"value": {
-					"title": "Value",
-					"description": "The total value of the amended contract.",
-					"$ref": "#/definitions/Value"
-				},
-				"aboveThreshold": {
-					"title": "Above threshold",
-					"description": "Whether the amended contract value is above the relevant threshold.",
-					"$ref": "#/definitions/AboveThreshold"
-				},
-				"suppliersAdded": {
-					"title": "Suppliers added",
-					"description": "The suppliers that will be added to the amended contract when it is signed.",
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/OrganizationReference"
-					}
-				},
-				"suppliersRemoved": {
-					"title": "Suppliers added",
-					"description": "The suppliers that will be removed from the amended contract when it is signed.",
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/OrganizationReference"
-					}
-				}
-			}
-		},
-		"Document": {
-			"properties": {
-				"noticeType": {
-					"title": "Notice type",
-					"description": "The notice type published, more specific than the OCDS document type.",
-					"type": [
-						"string",
-						"null"
-					]
-				}
-			}
-		},
-		"Period": {
-			"properties": {
-				"durationInMonths": {
-					"title": "Duration in months",
-					"description": "The maximum duration of this period in months.",
-					"type": [
-						"integer",
-						"null"
-					]
-				}
-			}
-		},
-		"Value": {
-			"properties": {
-				"amountGross": {
-					"title": "Gross amount",
-					"description": "The amount including all taxes.",
-					"type": [
-						"number",
-						"null"
-					]
-				}
-			}
-		},
-		"AwardCriteria": {
-			"properties": {
-				"description": {
-					"title": "Description",
-					"description": "An overall description of all award criteria.",
-					"type": [
-						"string",
-						"null"
-					]
-				}
-			}
-		},
-		"Communication": {
-			"properties": {
-				"futureNoticeRecipients": {
-					"title": "Future notice recipients",
-					"description": "Who the next sequential notice will be provided to, if not published.",
-					"type": [
-						"string",
-						"null"
-					]
-				}
-			}
-		},
-		"FrameworkAgreement": {
-			"properties": {
-				"isOpenFrameworkScheme": {
-					"title": "Is open framework scheme",
-					"description": "Whether the framework agreement is an open framework. In the UK, an open framework is a series of frameworks with substantially the same terms. Awarded suppliers are carried over and new suppliers can bid.",
-					"type": [
-						"boolean",
-						"null"
-					]
-				},
-				"openFrameworkSchemeEndDate": {
-					"title": "Open framework scheme end date",
-					"description": "The date on which the final framework agreement in the open framework ends.",
-					"type": [
-						"string",
-						"null"
-					],
-					"format": "date-time"
-				},
-				"type": {
-					"title": "Type",
-					"description": "Whether the framework agreement can be used by buyers not listed in the contracting process.",
-					"type": [
-						"string",
-						"null"
-					],
-					"codelist": "dynamicPurchasingSystemType.csv",
-					"openCodelist": false,
-					"enum": [
-						"open",
-						"closed",
-						null
-					]
-				},
-				"buyerClassificationRestrictions": {
-					"title": "Buyer classification restrictions",
-					"description": "The classifications of buyers who can use the framework agreement. In the UK, used if only utilities can use a dynamic market.",
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Classification"
-					}
-				},
-				"buyerLocationRestrictions": {
-					"title": "Buyer location restrictions",
-					"description": "Restrictions on the location of buyer who can use the framework agreement.",
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Location"
-					}
-				}
-			}
-		},
-		"OtherRequirements": {
-			"properties": {
-				"reservedParticipationLocation": {
-					"title": "Reserved participation location",
-					"description": "The location of organizations to which participation is reserved. In the UK, below-threshold contracts can be reserved for suppliers from a single county or London borough.",
-					"$ref": "#/definitions/Location"
-				}
-			}
-		},
-		"Subcontract": {
-			"properties": {
-				"description": {
-					"description": "A description of the subcontract, including any subcontractor information only available as free text. In the UK, the associated people/organisations that the supplier will subcontract to or is relying on to satisfy the conditions of participation.",
-					"type": [
-						"string",
-						"null"
-					]
-				}
-			}
-		},
-		"Suitability": {
-			"properties": {
-				"vcse": {
-					"title": "VCSE",
-					"description": "Whether the contracting process, lot or lot group is suitable for voluntary, community or social enterprises. In the UK, a VCSE is defined as a non-governmental organization that is value-driven and principally reinvests its surpluses to further social, environmental or cultural objectives.",
-					"type": [
-						"boolean",
-						"null"
-					]
-				}
-			}
-		},
-		"AboveThreshold": {
-			"title": "Above threshold",
-			"description": "Whether the tender, award or contract value is above the relevant threshold.",
-			"type": [
-				"boolean",
-				"null"
-			]
-		}
-	}
+        "details": {
+          "properties": {
+            "vcse": {
+              "title": "VCSE status",
+              "description": "Whether an organization is a voluntary, community or social enterprise (VCSE). In the UK, a VCSE is defined as a non-governmental organization that is value-driven and principally reinvests its surpluses to further social, environmental or cultural objectives.",
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "publicServiceMissionOrganization": {
+              "title": "Public service mission organization status",
+              "description": "Whether an organization is a public service mission organization. In the UK, public service mission organizations are called public service mutuals, and are defined as delivering reservable light touch public services, not for profit or distributing profits to members only, and employee-managed.",
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "shelteredWorkshop": {
+              "title": "Sheltered workshop status",
+              "description": "Whether an organization is a sheltered workshop. In the UK, sheltered workshops are called supported employment providers, and are defined as providing employment or related support to disabled or disadvantaged individuals, who are at least 30% of employees.",
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "excludedSupplier": {
+              "title": "Excluded supplier information",
+              "description": "Information about an excluded supplier being awarded a contract.",
+              "type": "object",
+              "properties": {
+                "exclusionGrounds": {
+                  "title": "Exclusion grounds",
+                  "description": "The exclusion grounds that apply to the supplier or an associated person.",
+                  "type": "object",
+                  "properties": {
+                    "criteria": {
+                      "title": "Exclusion criteria",
+                      "description": "The array of exclusion criteria.",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "title": "Type",
+                            "description": "The type of exclusion.",
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "domesticLegalBasis": {
+                            "title": "Domestic legal basis",
+                            "description": "Whether the legal basis for the exclusion grounds is UK-based.",
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "awardRationale": {
+                  "title": "Award rationale",
+                  "description": "The rationale for awarding the contract to the excluded supplier.",
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "awardRationaleClassification": {
+                  "title": "Award rationale classification",
+                  "description": "The classification of the rationale for awarding the contract to the excluded supplier.",
+                  "$ref": "#/definitions/Classification"
+                }
+              }
+            }
+          }
+        },
+        "control": {
+          "title": "Control",
+          "description": "Information on other organizations or people that have a controlling interest in the organization.",
+          "type": "object",
+          "properties": {
+            "description": {
+              "title": "Description",
+              "description": "Textual description of who has what control over the organization.",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Planning": {
+      "properties": {
+        "noEngagementNoticeRationale": {
+          "title": "No engagement notice rationale",
+          "description": "The rationale for not publishing an engagement notice before the tender notice, if engagement has been carried out.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Tender": {
+      "properties": {
+        "finalStatusDate": {
+          "title": "Final status date",
+          "description": "The date on which the tender reached its final status.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "procurementMethodRationaleLegalBasis": {
+          "title": "Procurement method rationale legal basis",
+          "description": "The legal basis of the rationale for the chosen procurement method. Specifically the UK statutory instrument that allows the direct award with the justification to protect life, health, public order or safety.",
+          "$ref": "#/definitions/Classification"
+        },
+        "specialRegime": {
+          "title": "Special regime",
+          "description": "The special regime that the tender is under.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aboveThreshold": {
+          "title": "Above threshold",
+          "description": "Whether the tender value is above the relevant threshold.",
+          "$ref": "#/definitions/AboveThreshold"
+        },
+        "lotDetails": {
+          "title": "Lot Details",
+          "description": "Details of any criteria that apply to bidding on the lots in this tender.",
+          "type": "object",
+          "properties": {
+            "maximumLotsBidPerSupplier": {
+              "title": "Maximum lots per supplier",
+              "description": "The maximum number of lots that one supplier can bid on as part of this contracting process.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximumLotsAwardedPerSupplier": {
+              "title": "Maximum lots per supplier",
+              "description": "The maximum number of lots that can be awarded to one supplier as part of this contracting process.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "awardCriteriaDetails": {
+              "title": "Award criteria details",
+              "description": "Any detailed or further information on the award or selection criteria.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "noLotsDivisionRationale": {
+              "title": "No lots division rationale",
+              "description": "The rationale for not dividing the tender into lots, if that would have been possible.",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "expressionOfInterestDeadline": {
+          "title": "Expression of interest deadline",
+          "description": "The submission deadline for expressions of interest. This submission is also called a request to participate.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "riskDetails": {
+          "title": "Risk details",
+          "description": "Description of risks that could jeopardise the satisfactory performance of the contract.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Award": {
+      "properties": {
+        "standstillPeriod": {
+          "title": "Standstill period",
+          "description": "The period before the contract signature during which the award decision can be challenged. This period typically starts on the date on which the tenderers are informed about the award decision.",
+          "$ref": "#/definitions/Period"
+        },
+        "finalStatusDate": {
+          "title": "Final status date",
+          "description": "The date on which the award reached its final status.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "assessmentSummariesDateSent": {
+          "title": "Assessment summaries date sent",
+          "description": "The date on which assessment summaries were sent to tenderers.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "aboveThreshold": {
+          "title": "Above threshold",
+          "description": "Whether the award value is above the relevant threshold.",
+          "$ref": "#/definitions/AboveThreshold"
+        },
+        "mainProcurementCategory": {
+          "title": "Main procurement category",
+          "description": "The primary category describing the main object of this award, from the closed [procurementCategory](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/codelists/#procurement-category) codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "procurementCategory.csv",
+          "openCodelist": false,
+          "enum": [
+            "goods",
+            "services",
+            "works",
+            null
+          ]
+        },
+        "additionalProcurementCategories": {
+          "title": "Additional procurement categories",
+          "description": "Any additional categories describing the objects of this award, using the open [extendedProcurementCategory](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/codelists/#extended-procurement-category) codelist.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "codelist": "extendedProcurementCategory.csv",
+          "openCodelist": true
+        }
+      }
+    },
+    "Contract": {
+      "properties": {
+        "aboveThreshold": {
+          "title": "Above threshold",
+          "description": "Whether the contract value is above the relevant threshold.",
+          "$ref": "#/definitions/AboveThreshold"
+        },
+        "terminationRationaleClassification": {
+          "title": "Termination rationale classification",
+          "description": "The classification of the rationale for terminating the contract.",
+          "$ref": "#/definitions/Classification"
+        },
+        "noAgreedMetricsRationale": {
+          "title": "No agreed metrics rationale",
+          "description": "The rationale for not publishing agreed metrics, in the UK known as key performance indicators.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "proposedAmendments": {
+          "title": "Proposed amendments",
+          "description": "Amendments that have been proposed but at this point have not been signed.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        }
+      }
+    },
+    "Amendment": {
+      "properties": {
+        "standstill": {
+          "title": "Standstill",
+          "description": "Whether the period between the publication of this notice and the estimated contract amendment date constitute a formal standstill period.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "rationaleClassifications": {
+          "title": "Rationale classifications",
+          "description": "The classifications of the rationale for amending the contract.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Classification"
+          }
+        },
+        "period": {
+          "title": "Period",
+          "description": "The period for which the amended contract will be in force.",
+          "$ref": "#/definitions/Period"
+        },
+        "hasRenewal": {
+          "title": "Has renewal",
+          "description": "Whether the buyer reserves the right to renew the contract.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total value of the amended contract.",
+          "$ref": "#/definitions/Value"
+        },
+        "aboveThreshold": {
+          "title": "Above threshold",
+          "description": "Whether the amended contract value is above the relevant threshold.",
+          "$ref": "#/definitions/AboveThreshold"
+        },
+        "suppliersAdded": {
+          "title": "Suppliers added",
+          "description": "The suppliers that will be added to the amended contract when it is signed.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          }
+        },
+        "suppliersRemoved": {
+          "title": "Suppliers added",
+          "description": "The suppliers that will be removed from the amended contract when it is signed.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          }
+        }
+      }
+    },
+    "Document": {
+      "properties": {
+        "noticeType": {
+          "title": "Notice type",
+          "description": "The notice type published, more specific than the OCDS document type.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Period": {
+      "properties": {
+        "durationInMonths": {
+          "title": "Duration in months",
+          "description": "The maximum duration of this period in months.",
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "Value": {
+      "properties": {
+        "amountGross": {
+          "title": "Gross amount",
+          "description": "The amount including all taxes.",
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "AwardCriteria": {
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "An overall description of all award criteria.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Communication": {
+      "properties": {
+        "futureNoticeRecipients": {
+          "title": "Future notice recipients",
+          "description": "Who the next sequential notice will be provided to, if not published.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "FrameworkAgreement": {
+      "properties": {
+        "isOpenFrameworkScheme": {
+          "title": "Is open framework scheme",
+          "description": "Whether the framework agreement is an open framework. In the UK, an open framework is a series of frameworks with substantially the same terms. Awarded suppliers are carried over and new suppliers can bid.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "openFrameworkSchemeEndDate": {
+          "title": "Open framework scheme end date",
+          "description": "The date on which the final framework agreement in the open framework ends.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "type": {
+          "title": "Type",
+          "description": "Whether the framework agreement can be used by buyers not listed in the contracting process.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "dynamicPurchasingSystemType.csv",
+          "openCodelist": false,
+          "enum": [
+            "open",
+            "closed",
+            null
+          ]
+        },
+        "buyerClassificationRestrictions": {
+          "title": "Buyer classification restrictions",
+          "description": "The classifications of buyers who can use the framework agreement. In the UK, used if only utilities can use a dynamic market.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Classification"
+          }
+        },
+        "buyerLocationRestrictions": {
+          "title": "Buyer location restrictions",
+          "description": "Restrictions on the location of buyer who can use the framework agreement.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Location"
+          }
+        }
+      }
+    },
+    "OtherRequirements": {
+      "properties": {
+        "reservedParticipationLocation": {
+          "title": "Reserved participation location",
+          "description": "The location of organizations to which participation is reserved. In the UK, below-threshold contracts can be reserved for suppliers from a single county or London borough.",
+          "$ref": "#/definitions/Location"
+        }
+      }
+    },
+    "Subcontract": {
+      "properties": {
+        "description": {
+          "description": "A description of the subcontract, including any subcontractor information only available as free text. In the UK, the associated people/organisations that the supplier will subcontract to or is relying on to satisfy the conditions of participation.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Suitability": {
+      "properties": {
+        "vcse": {
+          "title": "VCSE",
+          "description": "Whether the contracting process, lot or lot group is suitable for voluntary, community or social enterprises. In the UK, a VCSE is defined as a non-governmental organization that is value-driven and principally reinvests its surpluses to further social, environmental or cultural objectives.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "AboveThreshold": {
+      "title": "Above threshold",
+      "description": "Whether the tender, award or contract value is above the relevant threshold.",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  }
 }
-
