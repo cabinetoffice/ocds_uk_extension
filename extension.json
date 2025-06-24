@@ -16,7 +16,8 @@
     "+documentType.csv",
     "+itemClassificationScheme.csv",
     "+milestoneType.csv",
-    "+partyRole.csv"
+    "+partyRole.csv",
+    "+reservedParticipation.csv"
   ],
   "contactPoint": {
     "name": "",
