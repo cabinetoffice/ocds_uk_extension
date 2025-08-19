@@ -151,37 +151,13 @@
         "aboveThreshold": {
           "title": "Above threshold",
           "description": "Whether the tender value is above the relevant threshold.",
-          "$ref": "#/definitions/AboveThreshold"
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "lotDetails": {
-          "title": "Lot Details",
-          "description": "Details of any criteria that apply to bidding on the lots in this tender.",
-          "type": "object",
           "properties": {
-            "maximumLotsBidPerSupplier": {
-              "title": "Maximum lots per supplier",
-              "description": "The maximum number of lots that one supplier can bid on as part of this contracting process.",
-              "type": [
-                "integer",
-                "null"
-              ]
-            },
-            "maximumLotsAwardedPerSupplier": {
-              "title": "Maximum lots per supplier",
-              "description": "The maximum number of lots that can be awarded to one supplier as part of this contracting process.",
-              "type": [
-                "integer",
-                "null"
-              ]
-            },
-            "awardCriteriaDetails": {
-              "title": "Award criteria details",
-              "description": "Any detailed or further information on the award or selection criteria.",
-              "type": [
-                "string",
-                "null"
-              ]
-            },
             "noLotsDivisionRationale": {
               "title": "No lots division rationale",
               "description": "The rationale for not dividing the tender into lots, if that would have been possible.",
@@ -239,7 +215,10 @@
         "aboveThreshold": {
           "title": "Above threshold",
           "description": "Whether the award value is above the relevant threshold.",
-          "$ref": "#/definitions/AboveThreshold"
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "mainProcurementCategory": {
           "title": "Main procurement category",
@@ -277,7 +256,10 @@
         "aboveThreshold": {
           "title": "Above threshold",
           "description": "Whether the contract value is above the relevant threshold.",
-          "$ref": "#/definitions/AboveThreshold"
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "terminationRationaleClassification": {
           "title": "Termination rationale classification",
@@ -342,7 +324,10 @@
         "aboveThreshold": {
           "title": "Above threshold",
           "description": "Whether the amended contract value is above the relevant threshold.",
-          "$ref": "#/definitions/AboveThreshold"
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "suppliersAdded": {
           "title": "Suppliers added",
@@ -399,7 +384,6 @@
       }
     },
     "AwardCriteria": {
-      "type": "object",
       "properties": {
         "description": {
           "title": "Description",
@@ -412,7 +396,6 @@
       }
     },
     "Communication": {
-      "type": "object",
       "properties": {
         "futureNoticeRecipients": {
           "title": "Future notice recipients",
@@ -425,7 +408,6 @@
       }
     },
     "FrameworkAgreement": {
-      "type": "object",
       "properties": {
         "isOpenFrameworkScheme": {
           "title": "Is open framework scheme",
@@ -480,7 +462,6 @@
       }
     },
     "OtherRequirements": {
-      "type": "object",
       "properties": {
         "reservedParticipationLocation": {
           "title": "Reserved participation location",
@@ -490,7 +471,6 @@
       }
     },
     "Subcontract": {
-      "type": "object",
       "properties": {
         "description": {
           "title": "Description",
@@ -503,7 +483,6 @@
       }
     },
     "Suitability": {
-      "type": "object",
       "properties": {
         "vcse": {
           "title": "VCSE",
@@ -514,14 +493,6 @@
           ]
         }
       }
-    },
-    "AboveThreshold": {
-      "title": "Above threshold",
-      "description": "Whether the tender, award or contract value is above the relevant threshold.",
-      "type": [
-        "boolean",
-        "null"
-      ]
     }
   }
 }

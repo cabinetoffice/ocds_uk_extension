@@ -20,14 +20,23 @@
     "+reservedParticipation.csv"
   ],
   "contactPoint": {
-    "name": "",
+    "name": "Find a Tender",
     "email": ""
   },
   "compatibility": [
     "1.1"
   ],
   "dependencies": [
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_awardCriteria_extension/master/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_bid_extension/v1.1.5/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_communication_extension/master/extension.json",
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/master/extension.json",
-    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_bid_extension/v1.1.5/extension.json"
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_otherRequirements_extension/master/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_subcontracting_extension/master/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_suitability_extension/master/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_techniques_extension/master/extension.json"
+  ],
+  "testDependencies": [
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_submissionTerms_extension/master/extension.json"
   ]
 }
