@@ -8,7 +8,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "details": {
           "properties": {
@@ -59,7 +60,8 @@
                             "type": [
                               "string",
                               "null"
-                            ]
+                            ],
+                            "minLength": 1
                           },
                           "domesticLegalBasis": {
                             "title": "Domestic legal basis",
@@ -69,11 +71,15 @@
                               "null"
                             ]
                           }
-                        }
+                        },
+                        "minProperties": 1
                       },
-                      "wholeListMerge": true
+                      "wholeListMerge": true,
+                      "uniqueItems": true,
+                      "minItems": 1
                     }
-                  }
+                  },
+                  "minProperties": 1
                 },
                 "awardRationale": {
                   "title": "Award rationale",
@@ -81,14 +87,16 @@
                   "type": [
                     "string",
                     "null"
-                  ]
+                  ],
+                  "minLength": 1
                 },
                 "awardRationaleClassification": {
                   "title": "Award rationale classification",
                   "description": "The classification of the rationale for awarding the contract to the excluded supplier.",
                   "$ref": "#/definitions/Classification"
                 }
-              }
+              },
+              "minProperties": 1
             }
           }
         },
@@ -103,9 +111,11 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         }
       }
     },
@@ -117,7 +127,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
       }
     },
@@ -145,8 +156,11 @@
             "null"
           ],
           "items": {
-            "type": "string"
-          }
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
         },
         "aboveThreshold": {
           "title": "Above threshold",
@@ -180,7 +194,8 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             },
             "noLotsDivisionRationale": {
               "title": "No lots division rationale",
@@ -188,9 +203,11 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         },
         "expressionOfInterestDeadline": {
           "title": "Expression of interest deadline",
@@ -207,7 +224,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
       }
     },
@@ -265,10 +283,13 @@
             "null"
           ],
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "codelist": "extendedProcurementCategory.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -290,7 +311,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "proposedAmendments": {
           "title": "Proposed amendments",
@@ -298,7 +320,9 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Amendment"
-          }
+          },
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -319,7 +343,9 @@
           "items": {
             "$ref": "#/definitions/Classification"
           },
-          "wholeListMerge": true
+          "wholeListMerge": true,
+          "uniqueItems": true,
+          "minItems": 1
         },
         "period": {
           "title": "Period",
@@ -350,7 +376,9 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/OrganizationReference"
-          }
+          },
+          "uniqueItems": true,
+          "minItems": 1
         },
         "suppliersRemoved": {
           "title": "Suppliers added",
@@ -358,7 +386,9 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/OrganizationReference"
-          }
+          },
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -370,7 +400,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
       }
     },
@@ -407,9 +438,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Communication": {
       "type": "object",
@@ -420,9 +453,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "FrameworkAgreement": {
       "type": "object",
@@ -466,7 +501,9 @@
           "items": {
             "$ref": "#/definitions/Classification"
           },
-          "wholeListMerge": true
+          "wholeListMerge": true,
+          "uniqueItems": true,
+          "minItems": 1
         },
         "buyerLocationRestrictions": {
           "title": "Buyer location restrictions",
@@ -475,9 +512,12 @@
           "items": {
             "$ref": "#/definitions/Location"
           },
-          "wholeListMerge": true
+          "wholeListMerge": true,
+          "uniqueItems": true,
+          "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "OtherRequirements": {
       "type": "object",
@@ -487,7 +527,8 @@
           "description": "The location of organizations to which participation is reserved. In the UK, below-threshold contracts can be reserved for suppliers from a single county or London borough.",
           "$ref": "#/definitions/Location"
         }
-      }
+      },
+      "minProperties": 1
     },
     "Subcontract": {
       "type": "object",
@@ -498,9 +539,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Suitability": {
       "type": "object",
@@ -513,7 +556,8 @@
             "null"
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "AboveThreshold": {
       "title": "Above threshold",
