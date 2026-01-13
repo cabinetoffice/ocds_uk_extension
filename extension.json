@@ -17,6 +17,7 @@
     "+itemClassificationScheme.csv",
     "+milestoneType.csv",
     "+partyRole.csv",
+    "penaltyType.csv"
     "+reservedParticipation.csv"
   ],
   "contactPoint": {
@@ -32,6 +33,7 @@
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_communication_extension/master/extension.json",
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/master/extension.json",
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_otherRequirements_extension/master/extension.json",
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_performance_failures_extension/master/extension.json",
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_subcontracting_extension/master/extension.json",
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_suitability_extension/master/extension.json",
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_techniques_extension/master/extension.json"
