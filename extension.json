@@ -17,7 +17,7 @@
     "+itemClassificationScheme.csv",
     "+milestoneType.csv",
     "+partyRole.csv",
-    "penaltyType.csv"
+    "penaltyType.csv",
     "+reservedParticipation.csv"
   ],
   "contactPoint": {
