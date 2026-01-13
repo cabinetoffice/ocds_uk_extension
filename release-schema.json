@@ -261,9 +261,17 @@
             "null"
           ]
         },
+        "terminationRationaleClassifications": {
+          "title": "Termination rationale classifications",
+          "description": "The classifications of the rationales for terminating the contract.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Classification"
+          }
+        },
         "terminationRationaleClassification": {
           "title": "Termination rationale classification",
-          "description": "The classification of the rationale for terminating the contract.",
+          "description": "(Deprecated. Should be included in the terminationRationaleClassifications array instead.) The classification of the rationale for terminating the contract.",
           "$ref": "#/definitions/Classification"
         },
         "noAgreedMetricsRationale": {
