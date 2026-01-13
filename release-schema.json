@@ -493,6 +493,15 @@
           ]
         }
       }
+    },
+    "Observation": {
+      "properties": {
+        "measureClassification": {
+          "title": "Measure classification",
+          "description": "The classification of the measure. For actual observations, this may be whether the required standard has been met. In the UK, possible id values are met, slightlyBelow, below, significantlyBelow and other.",
+          "$ref": "#/definitions/Classification"
+        }
+      }
     }
   }
 }
