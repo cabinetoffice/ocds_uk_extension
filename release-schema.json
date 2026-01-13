@@ -502,6 +502,96 @@
           "$ref": "#/definitions/Classification"
         }
       }
-    }
+    },
+    "PerformanceFailure": {
+      "properties": {
+        "requirement": {
+          "title": "Requirement",
+          "description": "A description of the requirement that has not been carried out successfully.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "A description of the performance failure.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decisionDate": {
+          "title": "Decision date",
+          "description": "The date of the decision that the supplier had failed to improve its performance.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "penaltyDate": {
+          "title": "Penalty date",
+          "description": "The date of the penalty for the performance failure. In the UK, this is the earliest of the dates of any partial termination, award of damages or settlement agreement.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "penaltyType": {
+          "title": "Penalty type",
+          "description": "The basis on which the penalty for the performance failure was decided, from the closed penaltyType codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "penaltyType.csv",
+          "openCodelist": false,
+          "enum": [
+            "contracted",
+            "imposed",
+            "negotiated",
+            null
+          ]
+        },
+        "penaltyTypeEntered": {
+          "title": "Penalty type entered",
+          "description": "The basis on which the penalty for the performance failure was decided, entered as free text.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "penaltyValue": {
+          "title": "Penalty value",
+          "description": "The value of any financial element to the penalty for the performance failure.",
+          "$ref": "#/definitions/Value"
+        },
+        "partialTermination": {
+          "title": "Partial termination",
+          "description": "A description of the partial termination of the contract that resulted from the performance failure.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "suppliers": {
+          "title": "Suppliers",
+          "description": "The suppliers that were responsible for the performance failure, especially if the contract is with multiple suppliers and not all of them are responsible. In the UK, this is always included.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          }
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "A list of documents related to the performance failure.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          }
+        }
+      }
   }
 }
